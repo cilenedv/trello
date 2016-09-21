@@ -1,0 +1,36 @@
+body{
+	background-color: #0079BF;
+}
+#texto{
+	display:block;
+	width:200px;
+	height:25px; 
+	background-color:#005586;
+	border:1px solid #005586;
+	border-radius: 2px;
+	color:white;
+}
+.fondo-form{
+	width: 202px;
+    height: 71px;
+    background-color: #E2E4E6;
+    padding: 8px;
+    border-radius:3px;
+}
+.icon-cross{
+	color:grey;
+	padding-top: 13px;
+	padding-left: 120px;
+	font-size: 20px;
+}
+#boton{
+	margin-top:10px;
+	width:100px;
+	height:30px;
+	background-color:#5DB349; 
+	color:white;
+	border:2px solid #5DB349;
+	border-radius:5px; 
+	float:left;
+
+}
