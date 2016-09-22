@@ -9,13 +9,16 @@ body{
 	border:1px solid #005586;
 	border-radius: 2px;
 	color:white;
+	 margin-left: 20px;
 }
 .fondo-form{
-	width: 202px;
-    height: 71px;
+	width: 215px;
+    height: 80px;
     background-color: #E2E4E6;
     padding: 8px;
     border-radius:3px;
+    margin-left: 20px;
+    cursor: pointer;
 }
 .icon-cross{
 	color:grey;
@@ -32,5 +35,19 @@ body{
 	border:2px solid #5DB349;
 	border-radius:5px; 
 	float:left;
+
+}
+.texto2{
+	display:block;
+	width:200px;
+	height:25px; 
+	background-color:#D7D9DB;
+	border:2px solid #AAAAAA;
+	border-radius: 2px;
+}
+.link{
+	margin-top: 14px;
+    display: inline-block;
+    cursor: pointer;
 
 }
