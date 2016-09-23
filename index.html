@@ -1,29 +1,43 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">                     
 <head>
-	<title></title>
-	<meta charset="utf-8">
-	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>trello</title>
+    <link rel="shorcut icon" href="img/trello.ico">
+    <link rel="stylesheet" type="text/css" href="css/icomoon/style.css">
+	<link href="css/bootstrap.min.css" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="css/main.css">
-	<link rel="stylesheet" type="text/css" href="css/icomoon/style.css">
-
-
 </head>
 <body>
-	<header>
+<header>
         <nav class="navbar navbar-default">
-            <div class="container-fluid">
-                   TRELLO
+            <div class="container-fluid contenedor">
+                  <button class="tablero">Tableros</button>
+                  <input type="text">
+                   <img src="img/trellologo.png" alt="" height="40px" class="imagen">
             </div>
         </nav>
     </header>
-	<form id="caja">
-		<span id="texto">Añadir una lista...</span>
-		<button type="button" id="boton">Guardar</button>
-		<i class="icon-cross" id="icon"></i>
-	</form>
-<script type="text/javascript" src="js/bootstrap.js"></script>
-<script type="text/javascript" src="js/app.js"></script>
-<i class="cross"></i>
+  <section class="trell">
+       <form class="form-inline">
+          <div class="contentForm form-group">
+           <div class="alignUp lista" id="texto1">
+                <span>Añadir una lista</span>
+            </div>
+            <div class="alignUp caja" id="mensaje">
+                <input  class="listaPreview inputl" type="text" placeholder="  Añadir una lista" id="inpForm"><br>
+                <button type="button" id="btnForm" class=" btn1 btn-success">Guardar</button>
+                <i class="icon-cross" id="icon"></i>
+
+            </div>
+            </div>
+        </form>  
+    </section>
+    <script src="js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="js/app.js">
+	</script>
 </body>
 </html>
+
