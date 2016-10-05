@@ -6,11 +6,11 @@ window.addEventListener("load",function(){
 
     mensaje.style.display = "none";
     texto1.addEventListener("click",function(e){
-		e.preventDefault();
+        e.preventDefault();
         mensaje.style.display = "block";
         texto1.style.display = "none";
         mensaje.style.display="inline-block";
-	});
+    });
     btnForm.addEventListener("click", crear);
     function crear(){
         var conten = document.createElement("div");
