@@ -1,43 +1,73 @@
-window.addEventListener("load", function() {
- 	document.getElementById("boton").style.display="none";
- 	document.getElementById("icon").style.display="none";
- 	var caja = document.getElementById("caja");
- 	var entrada=document.getElementById("texto");
- 	document.getElementById("boton");
- 	document.getElementById("icon");
- 	document.getElementById("nombre");
- 	entrada.addEventListener("click",function(){
- 		texto.style.display="none";
- 		agregar();
- 		boton.style.display="block";
- 		icon.style.display="block";
- 		document.getElementById("caja").classList.add("fondo-form");
+window.addEventListener("load",function(){
+    var texto1 = document.getElementById('texto1');
+    var mensaje = document.getElementById('mensaje');
+    var btnForm = document.getElementById("btnForm");
+    var inpForm = document.getElementById("inpForm");
 
- 	});
- 	function agregar() {
-        var mensaje = document.createElement("input");
-        mensaje.setAttribute("id","nombre");
-       	mensaje.placeholder = "Añadir una lista...";
-       	mensaje.classList.add("texto2");
-        caja.insertBefore(mensaje, caja.childNodes[0]);
-    }
-    boton.addEventListener("click",imprimir);
-    function imprimir(){
-    	boton.style.display="none";
-    	icon.style.display="none";
-    	nombre.style.display="none";
-    	valor = document.getElementById("nombre").value;
-    	var contenedor=document.createElement("div");
-		contenedor.innerHTML = valor;
-		caja.insertBefore(contenedor,caja.childNodes[0]);
-		var crear=document.createElement("a");
-		caja.insertBefore(crear, caja.childNodes[1]);
-		var t = document.createTextNode("Añadir una tarjeta"); 
-		crear.appendChild(t);
-		crear.classList.add("link")
+    mensaje.style.display = "none";
+    texto1.addEventListener("click",function(e){
+		e.preventDefault();
+        mensaje.style.display = "block";
+        texto1.style.display = "none";
+        mensaje.style.display="inline-block";
+	});
+    btnForm.addEventListener("click", crear);
+    function crear(){
+        var conten = document.createElement("div");
+        var titulo = document.createElement("h5");
+        var enlace = document.createElement("a");
+        var nodeTitulo = document.createTextNode(inpForm.value);
+        var nodeNuevo = document.createTextNode("Añadir una tarjeta");
 
+        inpForm.value="";
+        enlace.setAttribute("id","enlace");
+        titulo.classList.add("estil-h5");
+        conten.classList.add("tarjeta"); 
 
-    }
+        titulo.appendChild(nodeTitulo);
+        enlace.appendChild(nodeNuevo);
+        conten.appendChild(titulo);
+        conten.appendChild(enlace);
+        
+        texto1.parentNode.insertBefore(conten,texto1.previousSibling);
+        texto1.style.display = "inline-block";
+        mensaje.style.display = "none";
 
+        enlace.addEventListener("click",function(){
+            var conte2=document.createElement("form");
+            var textarea=document.createElement("textarea");
+            var botonArea=document.createElement("button");
+            var botonX=document.createElement("button");
+
+            botonArea.classList.add("botonAr");
+            botonArea.textContent="Guardar";
+            botonArea.setAttribute("type","button");
+            textarea.classList.add("textAre");
+            botonX.classList.add("icon-cross");
+            botonX.classList.add("cross");
+            botonX.setAttribute("type","button");
+            conte2.classList.add("tarjetaArea");
+
+            conten.appendChild(conte2);
+            conte2.appendChild(textarea);
+            conte2.appendChild(botonArea);
+            conte2.appendChild(botonX);
+
+            enlace.style.display="none";
+
+            botonArea.addEventListener("click",function(){
+
+                conte2.style.display="none";
+
+                var nombreCarta=document.createElement("div");
+                conten.appendChild(nombreCarta);
+
+                nombreCarta.classList.add("nombreCarta");
+                nombreCarta.textContent=textarea.value;
+                conten.insertBefore(nombreCarta,enlace);
+                enlace.style.display="block";
+                });
+        });
+    }    
+    
 });
-
