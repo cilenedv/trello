@@ -3,6 +3,7 @@ window.addEventListener("load",function(){
     var mensaje = document.getElementById('mensaje');
     var btnForm = document.getElementById("btnForm");
     var inpForm = document.getElementById("inpForm");
+    var contador=1;
 
     mensaje.style.display = "none";
     texto1.addEventListener("click",function(e){
@@ -10,6 +11,7 @@ window.addEventListener("load",function(){
         mensaje.style.display = "block";
         texto1.style.display = "none";
         mensaje.style.display="inline-block";
+        inpForm.focus();
     });
     btnForm.addEventListener("click", crear);
     function crear(){
@@ -23,6 +25,7 @@ window.addEventListener("load",function(){
         enlace.setAttribute("id","enlace");
         titulo.classList.add("estil-h5");
         conten.classList.add("tarjeta"); 
+        conten.setAttribute("id", "tarjeta");
 
         titulo.appendChild(nodeTitulo);
         enlace.appendChild(nodeNuevo);
@@ -54,6 +57,25 @@ window.addEventListener("load",function(){
             conte2.appendChild(botonX);
 
             enlace.style.display="none";
+            conten.addEventListener("dragenter", entraArrastrar);
+            conten.addEventListener("dragover", arrastrarSobre);
+            conten.addEventListener("drop", soltar);
+
+            function entraArrastrar(e) {
+                conten.classList.add("over");
+            }
+
+            function arrastrarSobre(e) {
+                e.preventDefault();
+            }
+
+            function soltar(e) {
+                var idArrastrado = e.dataTransfer.getData("text");
+                var elementoArrastrado = document.getElementById(idArrastrado);
+                var temporal = this.innerHTML;
+                this.insertBefore(elementoArrastrado,this.childNodes[1]);
+                this.classList.remove("over");
+            }
 
             botonArea.addEventListener("click",function(){
 
@@ -63,10 +85,25 @@ window.addEventListener("load",function(){
                 conten.appendChild(nombreCarta);
 
                 nombreCarta.classList.add("nombreCarta");
+                nombreCarta.setAttribute("id", "nombreCarta"+contador);
+                nombreCarta.draggable=true;
+                contador++;
                 nombreCarta.textContent=textarea.value;
                 conten.insertBefore(nombreCarta,enlace);
                 enlace.style.display="block";
-                });
+
+               nombreCarta.addEventListener("dragstart",empiezaArrastrar);
+               nombreCarta.addEventListener("dragend",terminaArrastrar);
+
+                function empiezaArrastrar(e) {
+                    e.dataTransfer.setData("text",this.id);
+                    this.style.opacity = "0.4";
+                }
+                function terminaArrastrar(e) {
+                     this.style.opacity = null;
+                }
+
+            });
         });
     }    
     
