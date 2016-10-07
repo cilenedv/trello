@@ -60,13 +60,15 @@ window.addEventListener("load",function(){
             conten.addEventListener("dragenter", entraArrastrar);
             conten.addEventListener("dragover", arrastrarSobre);
             conten.addEventListener("drop", soltar);
+            conten.addEventListener("dragleave",dejaArrastrar);
 
             function entraArrastrar(e) {
-                conten.classList.add("over");
+               
             }
 
             function arrastrarSobre(e) {
                 e.preventDefault();
+                this.classList.add("over");
             }
 
             function soltar(e) {
@@ -75,6 +77,10 @@ window.addEventListener("load",function(){
                 var temporal = this.innerHTML;
                 this.insertBefore(elementoArrastrado,this.childNodes[1]);
                 this.classList.remove("over");
+            }
+            function dejaArrastrar(e){
+                this.classList.remove("over");
+
             }
 
             botonArea.addEventListener("click",function(){

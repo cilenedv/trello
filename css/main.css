@@ -163,9 +163,10 @@ header {
     padding: 4px;
     border-radius: 4px;
 }
-/*.over {
-  border: 2px dashed #000;
-}*/
+.over {
+  border: 3px solid #E2E4E6;
+  background-color:#0079BF;
+}
 .opacity{
     background-color: rgba(76, 105, 212, 0.4);
     background: rgba(76, 105, 212, 0.4);
