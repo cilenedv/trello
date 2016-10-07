@@ -97,10 +97,11 @@ window.addEventListener("load",function(){
 
                 function empiezaArrastrar(e) {
                     e.dataTransfer.setData("text",this.id);
-                    this.style.opacity = "0.4";
+                    this.classList.add("opacity");
                 }
                 function terminaArrastrar(e) {
                      this.style.opacity = null;
+                     this.classList.remove("opacity");
                 }
 
             });
