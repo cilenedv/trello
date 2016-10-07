@@ -13,7 +13,9 @@ window.addEventListener("load",function(){
         mensaje.style.display="inline-block";
         inpForm.focus();
     });
+
     btnForm.addEventListener("click", crear);
+
     function crear(){
         var conten = document.createElement("div");
         var titulo = document.createElement("h5");
@@ -57,14 +59,9 @@ window.addEventListener("load",function(){
             conte2.appendChild(botonX);
 
             enlace.style.display="none";
-            conten.addEventListener("dragenter", entraArrastrar);
             conten.addEventListener("dragover", arrastrarSobre);
             conten.addEventListener("drop", soltar);
             conten.addEventListener("dragleave",dejaArrastrar);
-
-            function entraArrastrar(e) {
-               
-            }
 
             function arrastrarSobre(e) {
                 e.preventDefault();
@@ -77,10 +74,11 @@ window.addEventListener("load",function(){
                 var temporal = this.innerHTML;
                 this.insertBefore(elementoArrastrado,this.childNodes[1]);
                 this.classList.remove("over");
+                this.classList.add("swing","animated");
             }
             function dejaArrastrar(e){
                 this.classList.remove("over");
-
+                this.classList.remove("swing","animated");
             }
 
             botonArea.addEventListener("click",function(){

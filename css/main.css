@@ -19,7 +19,7 @@ header {
 }
 
 .lista{
-     margin-top: 10px;
+    margin-top: 37px;
     margin-left: 10px;
     position: relative;
     background-color: #006AA8;
@@ -53,7 +53,7 @@ header {
     text-align: center;
     background-color: #E2E4E6;
     width: 230px;
-    top: 10px;
+    top: 36px;
     border-radius: 5px;
     box-sizing:border-box;
     display: inline-block;
@@ -111,7 +111,7 @@ header {
 
 .tarjeta{
     position: relative;
-    top: 0;
+    top: 26px;
     width: 250px;
     background-color:#E2E4E6;
     margin: 10px;
@@ -171,4 +171,7 @@ header {
     background-color: rgba(76, 105, 212, 0.4);
     background: rgba(76, 105, 212, 0.4);
      color: black;
+}
+.oculta{
+    display: none;
 }
